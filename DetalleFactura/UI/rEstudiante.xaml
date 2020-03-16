@@ -1,0 +1,24 @@
+﻿<Window x:Class="DetalleFactura.UI.rEstudiante"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DetalleFactura.UI"
+        mc:Ignorable="d"
+        Title="rEstudiante" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Label Content="EstudainteId" Width="158" HorizontalAlignment="Left" Margin="25,50,0,0"/>
+            <TextBox x:Name="idTextBox" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left" Margin="120,-25,0,0"/>
+            <Label x:Name="nombreTextBox" Content="Nombre" HorizontalAlignment="Left" Margin="25,50,0,0"/>
+            <TextBox x:Name="nombreTextBox1" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left" Margin="120,-20,0,0"/>
+            <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Margin="40,80,0,0" Height="39" Width="95"/>
+            <Button x:Name="guardarButton" Content="Guardar" Width="111" Height="47" HorizontalAlignment="Left" Margin="180,-40,0,0"/>
+            <Button x:Name="eliminarButton" Content="Eliminar" Width="110" HorizontalAlignment="Left" Height="46" Margin="340,-50,0,0"/>
+            <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Height="49" Width="85" Margin="300,-440,0,0"/>
+
+
+        </StackPanel>
+
+    </Grid>
+</Window>

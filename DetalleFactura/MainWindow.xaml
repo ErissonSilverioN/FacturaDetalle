@@ -1,0 +1,113 @@
+﻿<Window x:Class="DetalleFactura.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DetalleFactura"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="580">
+    <Grid>
+        
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.ColumnSpan="2">
+            <Label Content="FacturaId" HorizontalAlignment="Left" Margin="25,40,0,0"/>
+            <TextBox x:Name="idTextBox" TextWrapping="Wrap" Width="66" HorizontalAlignment="Left" Margin="100,-20,0,0">
+                <TextBox.Text>
+                    <Binding Path="FacturaId" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+
+
+
+            <Button x:Name="buscarButton" Content="Buscar" HorizontalAlignment="Left" Margin="190,-30,0,0" Width="90" Height="37" Click="buscarButton_Click"/>
+            <Label Content="Fecha" HorizontalAlignment="Left" Margin="350,-40,0,0" Height="25"/>
+            <DatePicker x:Name="fechaDatePicker" Width="111" HorizontalAlignment="Left" Margin="400,-40,0,0" Height="27">
+                <DatePicker.SelectedDate>
+                    <Binding Path="Fecha" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </DatePicker.SelectedDate>
+            </DatePicker>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1">
+            <Label Content="Estudiante" HorizontalAlignment="Left" Margin="25,10,0,0"/>
+            <TextBox x:Name="estudianteTextBox" TextWrapping="Wrap" Width="184" HorizontalAlignment="Left" Margin="100,-23,0,0">
+                <TextBox.Text>
+                    <Binding Path="Estudiante" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <Label Content="Categoria" HorizontalAlignment="Left" Margin="310,-25,0,0"/>
+            <ComboBox x:Name="categoriaComboBox" Width="145" HorizontalAlignment="Left" Margin="385,-25,0,0"/>
+            <Label Content="Cantidad" HorizontalAlignment="Left" Margin="25,18,0,0"/>
+            <TextBox x:Name="cantidadTextBox" TextWrapping="Wrap" Width="68" HorizontalAlignment="Left" Margin="100,-22,0,0" TextChanged="cantidadTextBox_TextChanged">
+                <TextBox.Text>
+                    <Binding Path="Cantidad" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <Label Content="x" Width="31" HorizontalAlignment="Left" Margin="180,-25,0,0"/>
+            <Label Content="Precio" HorizontalAlignment="Left" Margin="200,-25,0,0"/>
+            <TextBox x:Name="precioTextBox" TextWrapping="Wrap" Width="76" HorizontalAlignment="Left" Margin="250,-23,0,0" TextChanged="precioTextBox_TextChanged">
+                <TextBox.Text>
+                    <Binding Path="Precio" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <Label Content="=" HorizontalAlignment="Left" Margin="335,-25,0,0"/>
+            <Label Content="Importe" HorizontalAlignment="Left" Margin="360,-25,0,0"/>
+            <TextBox x:Name="importeTextBox" TextWrapping="Wrap" Width="120" HorizontalAlignment="Left" Margin="420,-25,0,0" Height="24" IsReadOnly="True">
+                <TextBox.Text>
+                    <Binding Path="Importe" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                        <Binding.ValidationRules>
+                            <ExceptionValidationRule/>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+
+            <DataGrid x:Name="detalleDateGrid" Height="190" Width="532" HorizontalAlignment="Left" Margin="25,45,0,0">
+                <DataGrid.ItemsSource>
+                    <Binding Path="FacturasDetalle" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay"/>
+                    
+                </DataGrid.ItemsSource>
+                
+            </DataGrid>
+            <Button x:Name="agregarButton" Content="Agregar" HorizontalAlignment="Left" Height="28" Width="92" Margin="450,-420,0,0" Click="agregarButton_Click"/>
+            <Button x:Name="removerButton" Content="Remover" HorizontalAlignment="Left" Margin="30,0,0,0" Height="37" Width="85" Click="removerButton_Click"/>
+            <Button x:Name="nuevoButton" Content="Nuevo" HorizontalAlignment="Left" Height="42" Width="86" Margin="50,50,0,0"/>
+            <Button x:Name="guardarButton" Content="Guardar" HorizontalAlignment="Left" Height="45" Width="102" Margin="200,-45,0,0" Click="guardarButton_Click"/>
+            <Button x:Name="eliminarButton" Content="Eliminar" HorizontalAlignment="Left" Height="41" Width="106" Margin="400,-40,0,0" Click="eliminarButton_Click"/>
+
+        </StackPanel>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="-81,36,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+
+
+
+
+    </Grid>
+
+</Window>
